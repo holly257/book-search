@@ -19,12 +19,17 @@ function Search(){
                 <label htmlFor='print-type'>Print Type: </label>
                 <select id='print-type'>
                     <option value='All'>All</option>
-                    <option value='ebook'>ebook</option>
+                    <option value='books'>Books Only</option>
+                    <option value='magazines'>Magazines Only</option>
                 </select>
                 <label htmlFor='book-type'> Book Type: </label>
                 <select id='print-type'>
-                    <option value='none'>No Filter</option>
-                    <option value='other'>other</option>
+                    <option value='null'>No Filter</option>
+                    <option value='partial'>Partial text</option>
+                    <option value='full'>Full text</option>
+                    <option value='free-ebooks'>Free eBooks</option>
+                    <option value='paid-ebooks'>Paid eBooks</option>
+                    <option value='ebooks'>All eBooks</option>
                 </select>
             </div>
         </form>

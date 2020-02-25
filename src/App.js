@@ -4,7 +4,16 @@ import Search from './search';
 import Results from './results';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      
+    };
+  }
 
+  componentDidMount(){
+    // api call
+  }
 
   render (){
     return (
