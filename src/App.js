@@ -14,9 +14,31 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  // componentDidMount(){
-  //   // api call
-  // }
+  formatParams(params) {
+    const items = Object.keys(params).map(key =>
+      `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+    )
+    console.log(items.join('&'))
+  }
+
+  componentDidMount(){
+    const apiUrl = 'https://www.googleapis.com/books/v1/volumes'
+    const apiKey = 'AIzaSyAiEW9FLUJjhCIDFzA6_ystVJ-cjl7xbjs'
+    const params = {
+      q: this.state.searchTerm,
+      filter: this.state.bookType,
+      printType: this.state.printType
+    }
+    console.log(params)
+    
+    const queryString = this.formatParams(params);
+    const url = apiUrl + queryString + apiKey;
+    
+
+    fetch(url)
+      .then()
+      .then()
+  }
 
   handleChange(event) {
     const {name, value} = event.target
