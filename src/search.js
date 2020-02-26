@@ -25,7 +25,7 @@ function Search(props){
                     name='printType'
                     onChange={props.handleChange}
                 >
-                    <option value='All'>All</option>
+                    <option value='all'>All</option>
                     <option value='books'>Books Only</option>
                     <option value='magazines'>Magazines Only</option>
                 </select>
