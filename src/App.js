@@ -46,16 +46,13 @@ class App extends React.Component {
       filter: this.state.bookType,
       printType: this.state.printType
     }
-    console.log(params)
     
     const queryString = this.formatParams(params);
     const url = apiUrl + '?' + queryString + '&key=' + apiKey;
-    console.log(url)
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         this.setState({
           searchData: data.items
         })
@@ -63,7 +60,6 @@ class App extends React.Component {
   }
 
   render (){
-    console.log(this.state.searchData)
     return (
       <div className="App">
         <header>Google Book Search</header>

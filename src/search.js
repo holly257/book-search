@@ -46,7 +46,6 @@ function Search(props){
                 </select>
             </div>
             <button
-
                 onClick={(event) => {
                     event.preventDefault()
                     props.handleSubmit()
