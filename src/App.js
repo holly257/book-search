@@ -9,35 +9,25 @@ class App extends React.Component {
     this.state = {
       searchTerm: '',
       bookType: '',
-      printType: ''
+      printType: '',
+      title: '',
+      author: '',
+      price: '',
+      description: ''
     };
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   formatParams(params) {
     const items = Object.keys(params).map(key =>
       `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
     )
-    console.log(items.join('&'))
+    return items.join('&')
   }
 
   componentDidMount(){
-    const apiUrl = 'https://www.googleapis.com/books/v1/volumes'
-    const apiKey = 'AIzaSyAiEW9FLUJjhCIDFzA6_ystVJ-cjl7xbjs'
-    const params = {
-      q: this.state.searchTerm,
-      filter: this.state.bookType,
-      printType: this.state.printType
-    }
-    console.log(params)
-    
-    const queryString = this.formatParams(params);
-    const url = apiUrl + queryString + apiKey;
-    
-
-    fetch(url)
-      .then()
-      .then()
+    this.executeSearch()
   }
 
   handleChange(event) {
@@ -47,12 +37,44 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit() {
+    this.executeSearch()
+  }
+
+  executeSearch() {
+    const apiUrl = 'https://www.googleapis.com/books/v1/volumes'
+    const apiKey = 'AIzaSyAiEW9FLUJjhCIDFzA6_ystVJ-cjl7xbjs'
+    const params = {
+      q: this.state.searchTerm,
+      filter: this.state.bookType,
+      printType: this.state.printType
+    }
+    console.log(params)
+    
+    // const queryString = this.formatParams(params);
+    // const url = apiUrl + queryString + '&key=' + apiKey;
+    // console.log(url)
+
+    // fetch(url)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data)
+    //     // this.setState({
+    //     //   title: '',
+    //     //   author: '',
+    //     //   price: '',
+    //     //   description: ''
+    //     // })
+    //   })
+  }
+
   render (){
     return (
       <div className="App">
         <header>Google Book Search</header>
         <Search 
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
           data={this.state}
         />
         <Results />

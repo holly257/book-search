@@ -10,7 +10,7 @@ function Search(props){
                     type='text'
                     name='searchTerm'
                     id='search'
-                    placeholder=''
+                    placeholder='flowers'
                     onChange={props.handleChange}
                     value={props.data.searchTerm}
                 >
@@ -45,7 +45,16 @@ function Search(props){
                     <option value='ebooks'>All eBooks</option>
                 </select>
             </div>
-            <button>SEARCH!</button>
+            <button
+
+                onClick={(event) => {
+                    event.preventDefault()
+                    props.handleSubmit()
+                }
+                }
+            >
+                SEARCH!
+            </button>
         </form>
     )
 }
