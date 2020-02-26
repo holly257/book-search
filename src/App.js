@@ -7,13 +7,10 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      searchTerm: '',
-      bookType: '',
-      printType: '',
-      title: '',
-      author: '',
-      price: '',
-      description: ''
+      searchTerm: 'flowers',
+      bookType: 'full',
+      printType: 'all',
+      searchData: []
     };
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -59,16 +56,14 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        // this.setState({
-        //   title: '',
-        //   author: '',
-        //   price: '',
-        //   description: ''
-        // })
+        this.setState({
+          searchData: data.items
+        })
       })
   }
 
   render (){
+    console.log(this.state.searchData)
     return (
       <div className="App">
         <header>Google Book Search</header>
@@ -77,11 +72,12 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
           data={this.state}
         />
-        <Results />
+        <Results searchData={this.state.searchData}/>
         <div>
           <p>{this.state.searchTerm}</p>
           <p>{this.state.bookType}</p>
           <p>{this.state.printType}</p>
+          <p></p>
         </div>
       </div>
     );
