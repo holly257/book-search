@@ -1,8 +1,9 @@
 header {
   display: flex;
-  background-color: black;
-  color: white;
+  background-color: rgb(211, 248, 230);
+  color: rgb(85, 84, 84);
   font-size: 30px;
+  text-shadow: -2px 1px white;
   align-items: center;
   justify-content: center;
   height: 20vh;
