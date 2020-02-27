@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchTerm: 'flowers',
-      bookType: 'full',
+      bookType: 'paid-ebooks',
       printType: 'all',
       searchData: [],
       error: null
@@ -24,9 +24,9 @@ class App extends React.Component {
     return items.join('&')
   }
 
-  componentDidMount(){
-    this.executeSearch()
-  }
+  // componentDidMount(){
+  //   this.executeSearch()
+  // }
 
   handleChange(event) {
     const {name, value} = event.target

@@ -3,7 +3,7 @@ import './eachResult.css';
 
 function EachResult(props){
     console.log(props)
-
+    const maxLength = 180;
     return(
         <div id='each-result-box'>
             <h3 id='title'>{props.title}</h3>
@@ -11,10 +11,15 @@ function EachResult(props){
             <p className='details' id='author'>Author: {props.author ? props.author : 'author not available'}</p>
             <p className='details'>Price: ${props.price ? 
                 props.price.amount : props.price.saleability} </p>
-            <p className='details' id='description'>{props.description ? props.description : 'description not available'}</p>
-            
-        </div>
-        
+            <div className='details' id='description'>
+                {!props.description ? 'description not available' 
+                    : props.description.length > maxLength ? 
+                        [props.description.substring(0, maxLength) + ' ...']
+                        : props.description
+                }
+            </div> 
+            <button className='details'>Read More</button>
+        </div>  
     )
 }
 
