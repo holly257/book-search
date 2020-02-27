@@ -1,7 +1,9 @@
 import React from 'react';
 import './eachResult.css';
+import ExpandResult from './ExpandResult';
 
 function EachResult(props){
+    
     console.log(props)
     const maxLength = 180;
     return(

@@ -1,8 +1,42 @@
 form {
-    display: flex;
     background-color: lightgrey;
     color: black;
-    align-items: center;
-    justify-content: space-around;
-    height: 30px;
+}
+
+.search-element{
+    margin: 0 25vw;
+    padding: 4px 0;
+}
+
+.dropdown {
+    border: 1px solid rgb(200, 248, 224);
+    cursor: pointer;
+}
+
+#search-button{
+    background-color: rgb(217, 247, 232);
+    cursor: pointer;
+    padding: 3px 15px;
+    justify-content: center;
+    justify-items: center;
+    margin: 0;
+}
+
+#btn-div{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin: 0;
+}
+
+@media(min-device-width: 750px){
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 30px;
+    }
+    .search-element {
+        margin: initial;
+    }
 }

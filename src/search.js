@@ -4,8 +4,8 @@ import './search.css';
 function Search(props){
     return(
         <form>
-            <div>
-                <label className='search-box' htmlFor='search'>Search: </label>
+            <div className='search-element'>
+                <label className='search-box' htmlFor='search'>Search: &nbsp;&nbsp;</label>
                 <input
                     type='text'
                     name='searchTerm'
@@ -17,9 +17,10 @@ function Search(props){
                 </input>
             </div>
 
-            <div>
-                <label htmlFor='print-type'>Print Type: </label>
+            <div className='search-element'>
+                <label htmlFor='print-type'>Print Type: &nbsp;</label>
                 <select 
+                    className='dropdown'
                     id='print-type'
                     value={props.data.printType}
                     name='printType'
@@ -29,10 +30,13 @@ function Search(props){
                     <option value='books'>Books Only</option>
                     <option value='magazines'>Magazines Only</option>
                 </select>
+            </div>
 
-                <label htmlFor='book-type'> Book Type: </label>
+            <div className='search-element'>
+                <label htmlFor='book-type'>Book Type: &nbsp;</label>
                 <select 
                     id='book-type'
+                    className='dropdown'
                     value={props.data.bookType}
                     name='bookType'
                     onChange={props.handleChange}
@@ -45,15 +49,21 @@ function Search(props){
                     <option value='ebooks'>All eBooks</option>
                 </select>
             </div>
-            <button
-                onClick={(event) => {
-                    event.preventDefault()
-                    props.handleSubmit()
-                }
-                }
-            >
-                SEARCH!
-            </button>
+            
+            <div id='btn-div'>
+                <button
+                    className='search-element'
+                    id='search-button'
+                    onClick={(event) => {
+                        event.preventDefault()
+                        props.handleSubmit()
+                    }
+                    }
+                >
+                    SEARCH!
+                </button>
+            </div>
+            
         </form>
     )
 }

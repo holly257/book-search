@@ -2,7 +2,7 @@ header {
   display: flex;
   background-color: black;
   color: white;
-  font-size: 50px;
+  font-size: 30px;
   align-items: center;
   justify-content: center;
   height: 20vh;
@@ -13,4 +13,21 @@ header {
   justify-content: center;
   margin: 60px;
   font-size: 25px;
+}
+
+@media(min-device-width: 750px){
+  header {
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+  }
+  
+  .app_error{
+    align-items: center;
+    justify-content: center;
+    margin: 60px;
+    font-size: 25px;
+  }
 }

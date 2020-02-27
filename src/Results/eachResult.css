@@ -1,6 +1,5 @@
 #each-result-box {
     padding: 20px;
-    height: 250px;
     border-bottom: 1px solid grey;
 }
 
@@ -9,11 +8,18 @@
     align-items: center;
     justify-content: center;
 }
-#book-image {
-    float: left;
-}
 
 .details {
     margin-left: 200px;
     margin-top: 30px;
+}
+
+@media(min-device-width: 600px){
+    #each-result-box{
+        height: 250px;
+    }
+
+    #book-image {
+        float: left;
+    }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Search from './search';
-import Results from './results';
+import Results from './Results/results';
 
 class App extends React.Component {
   constructor(props){
@@ -75,7 +75,6 @@ class App extends React.Component {
       ? <div className='app_error'>{this.state.error}</div>
       : <Results searchData={this.state.searchData}/>;
 
-    // const showResults = ? {error} : <Results searchData={this.state.searchData}/>
     return (
       <div className="App">
         <header>Google Book Search</header>
