@@ -1,25 +1,45 @@
 #each-result-box {
-    padding: 20px;
     border-bottom: 1px solid grey;
+    display: block;
 }
 
-#title {
+.child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+#book-image{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.details {
-    margin-left: 200px;
-    margin-top: 30px;
+#description {
+    padding: 5vw;
+    width: 90vw;
 }
 
-@media(min-device-width: 600px){
-    #each-result-box{
+@media(min-device-width: 700px){
+    /* #each-result-box {
+        padding: 20px;
+        border-bottom: 1px solid grey;
         height: 250px;
+    }
+    
+    #title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .details {
+        margin-left: 200px;
+        margin-top: 30px;
     }
 
     #book-image {
         float: left;
-    }
+    } */
 }

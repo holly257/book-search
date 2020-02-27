@@ -24,9 +24,9 @@ class App extends React.Component {
     return items.join('&')
   }
 
-  // componentDidMount(){
-  //   this.executeSearch()
-  // }
+  componentDidMount(){
+    this.executeSearch()
+  }
 
   handleChange(event) {
     const {name, value} = event.target
