@@ -41,7 +41,6 @@ function Search(props){
                     name='bookType'
                     onChange={props.handleChange}
                 >
-                    <option value='null'>No Filter</option>
                     <option value='partial'>Partial text</option>
                     <option value='full'>Full text</option>
                     <option value='free-ebooks'>Free eBooks</option>
