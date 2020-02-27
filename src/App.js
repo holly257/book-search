@@ -10,7 +10,8 @@ class App extends React.Component {
       searchTerm: 'flowers',
       bookType: 'full',
       printType: 'all',
-      searchData: []
+      searchData: [],
+      error: null
     };
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -51,15 +52,30 @@ class App extends React.Component {
     const url = apiUrl + '?' + queryString + '&key=' + apiKey;
 
     fetch(url)
+      .then(res => {
+        if(!res.ok) {
+          throw new Error('Sorry, something went wrong...')
+        } return res;
+      })
       .then(res => res.json())
       .then(data => {
         this.setState({
           searchData: data.items
-        })
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
       })
   }
 
   render (){
+    const returnErrorOrResults = this.state.error
+      ? <div className='app_error'>{this.state.error}</div>
+      : <Results searchData={this.state.searchData}/>;
+
+    // const showResults = ? {error} : <Results searchData={this.state.searchData}/>
     return (
       <div className="App">
         <header>Google Book Search</header>
@@ -68,13 +84,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
           data={this.state}
         />
-        <Results searchData={this.state.searchData}/>
-        <div>
-          <p>{this.state.searchTerm}</p>
-          <p>{this.state.bookType}</p>
-          <p>{this.state.printType}</p>
-          <p></p>
-        </div>
+        {returnErrorOrResults}
       </div>
     );
   }

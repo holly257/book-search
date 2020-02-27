@@ -8,3 +8,9 @@ header {
   height: 20vh;
 }
 
+.app_error{
+  align-items: center;
+  justify-content: center;
+  margin: 60px;
+  font-size: 25px;
+}
