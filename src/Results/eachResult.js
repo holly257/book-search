@@ -9,9 +9,7 @@ function EachResult(props){
     return(
         <div id='each-result-box'>
             <h3  className='child' id='title'>{props.title}</h3>
-            <span id='book-cont'>
-                <img  id='book-image' src={props.image} alt='book image' />
-            </span>
+            <img  id='book-image' src={props.image} alt='book image' />
             <p className='details child' id='author'>Author: {props.author ? props.author : 'author not available'}</p>
             <p className='details child'>Price: ${props.price ? 
                 props.price.amount : props.price.saleability} </p>
@@ -22,7 +20,7 @@ function EachResult(props){
                         : props.description
                 }
             </div> 
-            <button className='details child'>Read More</button>
+            <button id='read-more-btn' className='details child'>Read More</button>
         </div>  
     )
 }
