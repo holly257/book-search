@@ -10,7 +10,7 @@
     width: 100vw;
 }
 
-#book-image{
+#book-cont{
     display: flex;
     align-items: center;
     justify-content: center;
