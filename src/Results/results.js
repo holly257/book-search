@@ -13,6 +13,8 @@ function Results(props){
                     author={item.volumeInfo.authors}
                     price={item.saleInfo}
                     description={item.volumeInfo.description}
+                    readMoreBtn={props.readMoreBtn}
+                    expand={props.expand}
                 /> 
             )}
         </div>

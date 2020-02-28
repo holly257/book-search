@@ -42,8 +42,8 @@ class App extends React.Component {
   }
 
   readMoreBtn = () => {
-    this.setState=({
-      expand: 
+    this.setState({
+      expand: !this.state.expand
     })
   }
 
@@ -84,6 +84,7 @@ class App extends React.Component {
       : <Results 
           searchData={this.state.searchData}
           readMoreBtn={this.readMoreBtn}
+          expand={this.state.expand}
         />;
 
     return (
