@@ -1,6 +1,6 @@
 import React from 'react';
 import './eachResult.css';
-import ExpandResult from './ExpandResult';
+// import ExpandResult from './ExpandResult';
 
 class EachResult extends React.Component{
     filterPrice(price){
@@ -16,6 +16,10 @@ class EachResult extends React.Component{
         } else {
             return 'Pricing not known'
         }
+    }
+
+    readMoreBtn = () => {
+        console.log('it worked')
     }
     
     render (){
@@ -35,7 +39,15 @@ class EachResult extends React.Component{
                             : this.props.description
                     }
                 </div> 
-                <button id='read-more-btn' className='details child'>Read More</button>
+                <button 
+                    id='read-more-btn' 
+                    className='details child'
+                    onClick={this.props.readMoreBtn}
+                >
+                    Read More
+                    
+                    
+                </button>
             </div>  
         )
     }
@@ -43,7 +55,4 @@ class EachResult extends React.Component{
 
 export default EachResult;
 
-
-// <p className='details child'>
-// Price: ${props.price ? props.price.listPrice.amount 
-//     : !props.price ? props.price.saleability : 'price not available'} </p>
+//delete expand result

@@ -11,10 +11,12 @@ class App extends React.Component {
       bookType: 'paid-ebooks',
       printType: 'all',
       searchData: [],
-      error: null
+      error: null,
+      expand: false
     };
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.readMoreBtn = this.readMoreBtn.bind(this)
   }
 
   formatParams(params) {
@@ -37,6 +39,12 @@ class App extends React.Component {
 
   handleSubmit() {
     this.executeSearch()
+  }
+
+  readMoreBtn = () => {
+    this.setState=({
+      expand: 
+    })
   }
 
   executeSearch() {
@@ -73,7 +81,10 @@ class App extends React.Component {
   render (){
     const returnErrorOrResults = this.state.error
       ? <div className='app_error'>{this.state.error}</div>
-      : <Results searchData={this.state.searchData}/>;
+      : <Results 
+          searchData={this.state.searchData}
+          readMoreBtn={this.readMoreBtn}
+        />;
 
     return (
       <div className="App">
@@ -81,6 +92,7 @@ class App extends React.Component {
         <Search 
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          
           data={this.state}
         />
         {returnErrorOrResults}

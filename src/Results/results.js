@@ -2,9 +2,9 @@ import React from 'react';
 import EachResult from './eachResult';
 
 function Results(props){
-    console.log(props.searchData)
+    // console.log(props.readMoreBtn)
     return(
-        <div>
+        <div >
             {props.searchData.map(item =>
                 <EachResult
                     key={item.id}
