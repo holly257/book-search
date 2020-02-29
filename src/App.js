@@ -12,11 +12,9 @@ class App extends React.Component {
       printType: 'all',
       searchData: [],
       error: null,
-      expand: false
     };
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.readMoreBtn = this.readMoreBtn.bind(this)
   }
 
   formatParams(params) {
@@ -39,12 +37,6 @@ class App extends React.Component {
 
   handleSubmit() {
     this.executeSearch()
-  }
-
-  readMoreBtn = () => {
-    this.setState({
-      expand: !this.state.expand
-    })
   }
 
   executeSearch() {
@@ -84,7 +76,6 @@ class App extends React.Component {
       : <Results 
           searchData={this.state.searchData}
           readMoreBtn={this.readMoreBtn}
-          expand={this.state.expand}
         />;
 
     return (
@@ -93,7 +84,6 @@ class App extends React.Component {
         <Search 
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          
           data={this.state}
         />
         {returnErrorOrResults}

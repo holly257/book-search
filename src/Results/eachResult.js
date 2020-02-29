@@ -3,6 +3,9 @@ import './eachResult.css';
 // import ExpandResult from './ExpandResult';
 
 class EachResult extends React.Component{
+    state = {
+        expand: false
+    }
     
     filterPrice(price){
         if(!price){
@@ -17,9 +20,14 @@ class EachResult extends React.Component{
             return 'Pricing not known'
         }
     }
+
+    readMoreBtn = () => {
+        this.setState({
+          expand: !this.state.expand
+        })
+    }
     
     render (){
-    console.log(this.props.expand)    
         const maxLength = 180;
         return(
             <div id='each-result-box'>
@@ -31,7 +39,7 @@ class EachResult extends React.Component{
                     
                 <div className='details child' id='description'>
                     {!this.props.description ? <i>Description Not Available</i> 
-                        : this.props.expand === false ? 
+                        : this.state.expand === false ? 
                             [this.props.description.substring(0, maxLength) + ' ...']
                             : this.props.description
                     }
@@ -39,11 +47,9 @@ class EachResult extends React.Component{
                 <button 
                     id='read-more-btn' 
                     className='details child'
-                    onClick={this.props.readMoreBtn}
+                    onClick={this.readMoreBtn}
                 >
-                    Read More
-                    
-                    
+                    {this.state.expand ? 'Read Less' : 'Read More'}
                 </button>
             </div>  
         )
@@ -51,9 +57,3 @@ class EachResult extends React.Component{
 }
 
 export default EachResult;
-
-//delete expand result
-
-// this.props.description.length > maxLength ? 
-// [this.props.description.substring(0, maxLength) + ' ...']
-// : this.props.description

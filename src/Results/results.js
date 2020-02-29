@@ -2,7 +2,6 @@ import React from 'react';
 import EachResult from './eachResult';
 
 function Results(props){
-    // console.log(props.readMoreBtn)
     return(
         <div >
             {props.searchData.map(item =>
@@ -14,7 +13,6 @@ function Results(props){
                     price={item.saleInfo}
                     description={item.volumeInfo.description}
                     readMoreBtn={props.readMoreBtn}
-                    expand={props.expand}
                 /> 
             )}
         </div>
